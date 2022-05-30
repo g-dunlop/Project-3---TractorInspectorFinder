@@ -1,6 +1,7 @@
 package com.codeclan.example.TractorFinder.models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
@@ -33,7 +34,7 @@ public class Inspector {
     @Column(name="lng")
     private double lng;
 
-    @JsonBackReference
+    @JsonIgnoreProperties({"inspectors"})
     @ManyToMany
     @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
     @JoinTable(
