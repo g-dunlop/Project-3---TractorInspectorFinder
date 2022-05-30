@@ -28,6 +28,9 @@ public class Inspector {
     @Column(name="phone_number")
     private String phoneNumber;
 
+    @Column(name="email")
+    private String email;
+
     @Column(name="lat")
     private double lat;
 
@@ -45,11 +48,12 @@ public class Inspector {
     private List<Tractor> tractors;
 
 
-    public Inspector(String name, String postcode, String address, String phoneNumber, double lat, double lng) {
+    public Inspector(String name, String postcode, String address, String phoneNumber, String email, double lat, double lng) {
         this.name = name;
         this.postcode = postcode;
         this.address = address;
         this.phoneNumber = phoneNumber;
+        this.email = email;
         this.lat = lat;
         this.lng = lng;
         this.tractors = new ArrayList<>();
@@ -96,6 +100,14 @@ public class Inspector {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public double getLat() {
