@@ -33,9 +33,10 @@ public class DataLoader implements ApplicationRunner {
         tractorRepository.save(tractor4);
 
         Inspector inspector1 = new Inspector("Morse", "FK14 7NZ", "1 I Heart Tractors Wayyyyy", "012346847284", "Morse@tractors.com", 56.143209, -3.634701);
-        inspectorRepository.save(inspector1);
         inspector1.addTractor(tractor1);
         inspectorRepository.save(inspector1);
+
+//        inspectorRepository.save(inspector1);
         inspector1.addTractor(tractor4);
         inspectorRepository.save(inspector1);
 
